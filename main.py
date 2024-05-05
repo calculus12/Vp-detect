@@ -144,7 +144,7 @@ class AudioData(BaseModel):
     data: str
 
 @app.post("/detect-phishing")
-async def detect_phishing(audio_data: AudioData):
+def detect_phishing(audio_data: AudioData):
     decoded_data = base64.b64decode(audio_data.data)
 
     blob_name = get_blob_name_with_timestamp()
